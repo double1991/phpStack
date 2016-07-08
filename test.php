@@ -40,7 +40,6 @@ function getFloatValue($value) {
 //篩選最低價格的股票
 function checkStock($stockArray) {
 	$size = count($stockArray) > 10 ? 10 : count($stockArray);
-	echo "*******";
 	for ($i = 1; $i < $size; $i++) {
 		if( getFloatValue($stockArray[$i]->turnoverOfRate > 2.0) && (getFloatValue($stockArray[$i]->lastData)<getFloatValue($stockArray[0]->lastData*1.02)) && (getFloatValue($stockArray[$i]->lastData)>getFloatValue($stockArray[0]->lastData*0.98))){
 		}else{
